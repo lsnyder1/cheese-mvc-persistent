@@ -11,6 +11,10 @@
 <div th:each="category : ${categories}">
     <ul th:text="${category.name}"></ul>
 </div>
+<form method ="get" action="category/add">
+    <button type = "submit" >Add Category</button>
+</form>
+
 
 </body>
 </html>
