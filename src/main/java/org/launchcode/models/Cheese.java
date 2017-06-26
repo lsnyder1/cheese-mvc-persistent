@@ -24,7 +24,7 @@ public class Cheese {
     @Size(min=1, message = "Description must not be empty")
     private String description;
 
-    private CheeseType type;
+    private Category category;
 
     public Cheese(String name, String description) {
         this.name = name;
