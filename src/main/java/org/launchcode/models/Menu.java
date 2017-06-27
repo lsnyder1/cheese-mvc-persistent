@@ -7,28 +7,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by lonny on 6/22/2017.
+ * Created by lonny on 6/27/2017.
  */
 @Entity
-public class Category {
-    @Id
-    @GeneratedValue
-    private int id;
+public class Menu {
 
     @NotNull
     @Size(min=3,max=15)
     private String name;
 
-    @OneToMany
-    @JoinColumn(name="category_id")
-    private List<Cheese> cheeses = new ArrayList<>();
+    @Id
+    @GeneratedValue
+    private int id;
 
+    @ManyToMany
+    List<Cheese> cheeses= new ArrayList<>();
 
-    public Category(String name){
+    public Menu (){}
 
+    public Menu(String name){
         this.name=name;
     }
-    public Category(){ }
 
     public String getName() {
         return name;
@@ -42,7 +41,15 @@ public class Category {
         return id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public List<Cheese> getCheeses() {
         return cheeses;
+    }
+
+    public void addItem(Cheese item){
+        cheeses.add(item);
     }
 }
