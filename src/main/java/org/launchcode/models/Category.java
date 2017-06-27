@@ -28,7 +28,7 @@ public class Category {
 
         this.name=name;
     }
-    public Category(){}
+    public Category(){ }
 
     public String getName() {
         return name;
@@ -38,11 +38,7 @@ public class Category {
         this.name = name;
     }
 
-    public List<Cheese> getCheeses() {
-        return cheeses;
-    }
-
-    public void setCheeses(List<Cheese> cheeses) {
-        this.cheeses = cheeses;
+    public int getId() {
+        return id;
     }
 }
