@@ -83,5 +83,13 @@ public class CheeseController {
         model.addAttribute("title","Cheeses with category "+category.getName());
         return"cheese/category";
     }
+    @RequestMapping(value="edit/{cheeseId}",method=RequestMethod.GET)
+    public String displayEditForm(Model model,@PathVariable Integer cheeseId){
+        Cheese cheese=cheeseDao.findOne(cheeseId);
+        model.addAttribute("title","Edit "+cheese.getName());
+        model.addAttribute(cheese);
+        model.addAttribute("categories",categoryDao.findAll());
+        return"cheese/edit";
+    }
 
 }
