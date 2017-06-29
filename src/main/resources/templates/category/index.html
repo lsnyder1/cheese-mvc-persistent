@@ -11,7 +11,9 @@
 <div th:each="category : ${categories}">
     <ul><a th:href = "'/cheese/category/'+${category.id}" th:text="${category.name}"></a></ul>
 </div>
-<a href="category/add">Add Category</a>
+<form action="/category/add" method ="get">
+<button>Add Category</button>
+</form>
 
 
 
