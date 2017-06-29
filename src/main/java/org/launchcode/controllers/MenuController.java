@@ -50,7 +50,7 @@ public class MenuController {
         }
 
         menuDao.save(menu);
-        return "redirect:view/" + menu.getId();
+        return "redirect:view/"+ menu.getId();
     }
     @RequestMapping(value="view/{menuId}",method=RequestMethod.GET)
     public String viewMenu(@PathVariable int menuId,Model model){
@@ -84,7 +84,7 @@ public class MenuController {
         theMenu.addItem(theCheese);
         menuDao.save(theMenu);
 
-        return "redirect:/menu/view" + theMenu.getId();
+        return "redirect:/menu/view/" + theMenu.getId();
 
     }
 
